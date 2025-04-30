@@ -2,15 +2,24 @@
   "name": "exercicio-22",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://github.com/nikaoch/exercicio-22#readme",
+  "bugs": {
+    "url": "https://github.com/nikaoch/exercicio-22/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikaoch/exercicio-22.git"
+  },
   "license": "ISC",
   "author": "",
   "type": "commonjs",
   "scripts": {
-    "dev": "parcel src/index.html src/styles/main.scss src/scripts/main.js",
+    "dev": "parcel src/index.html src/scripts/main.js src/styles/main.scss",
     "build": "parcel build src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.0",
     "parcel": "^2.8.0"
   }
 }
