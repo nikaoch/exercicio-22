@@ -1,25 +1,27 @@
-const dataDoAniversario = new Date('Nov 04, 2025 00:00:00');
-const timeStampDoAniversario = dataDoEvento.getTime();
+AOS.init();
+
+const dataDoEvento = new Date('Dec 12, 2025 19:00:00');
+const timeStampDoEvento = dataDoEvento.getTime();
 
 const contaAsHoras = setInterval(function() {
     const agora = new Date();
     const timeStampAtual = agora.getTime();
 
-    const distanciaAteOAniversario = timeStampDoAniversario - timeStampAtual;
+    const distanciaAteOEvento = timeStampDoEvento - timeStampAtual;
 
     const diaEmMs = 1000*60*60*24;
     const horaEmMs = 1000*60*60;
     const minutoEmMs = 1000*60;
 
-    const diasAteOAniversario = Math.floor(distanciaAteOAniversario/diaEmMs);
-    const horasAteOAniversario = Math.floor((distanciaAteOAniversario%diaEmMs)/horaEmMs);
-    const minutosAteOAniversario = Math.floor((distanciaAteOAniversario%horaEmMs)/minutoEmMs);
-    const segundosAteOAniversario = Math.floor((distanciaAteOAniversario%minutoEmMs)/1000);
+    const diasAteOEvento = Math.floor(distanciaAteOEvento/diaEmMs);
+    const horasAteOEvento = Math.floor((distanciaAteOEvento%diaEmMs)/horaEmMs);
+    const minutosAteOEvento = Math.floor((distanciaAteOEvento%horaEmMs)/minutoEmMs);
+    const segundosAteOEvento = Math.floor((distanciaAteOEvento%minutoEmMs)/1000);
 
-    document.getElementById('contador').innerHTML = `${diasAteOAniversario}d ${horasAteOAniversario}h ${minutosAteOAniversario}m ${segundosAteOAniversario}s.`;
+    document.getElementById('contador').innerHTML = `${diasAteOEvento}d ${horasAteOEvento}h ${minutosAteOEvento}m ${segundosAteOEvento}s`;
 
     if (diasAteOEvento < 0) {
         clearInterval(contaAsHoras);
-        document.getElementById('contador').innerHTML = 'Aniversário expirado';
+        document.getElementById('contador').innerHTML = 'Evento expirado';
     }
 }, 1000);
